@@ -10,16 +10,16 @@ async function bootstrap() {
   app.use(cors({
     origin: '*'
   }));
-  
+
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
       whitelist: true,
       forbidNonWhitelisted: true,
     })
-    )
+  )
 
-  useContainer(app.select(AppModule),{fallbackOnErrors:true});
+  useContainer(app.select(AppModule), { fallbackOnErrors: true });
   await app.listen(3010);
 }
 bootstrap();
