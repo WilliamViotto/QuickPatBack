@@ -21,6 +21,13 @@ export class UsuariosArmazenados {
         return (possivelUsuario!== undefined);
     }
 
+    async validaLogin(login: string){
+        const loginOk = this.#usuarios.find(
+            usuario => usuario.login === login
+        );
+        return (loginOk!== undefined);
+    }
+
 
     private buscaPorID(id: string){
         const possivelUsuario = this.#usuarios.find(
